@@ -122,7 +122,6 @@ nav {
     padding: 10px;
     border-radius: 5px;
     color: white;
-    z-index: -1;
 }
 
 .productinputs .inputfield input:focus {
