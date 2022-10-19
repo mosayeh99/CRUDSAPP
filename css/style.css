@@ -117,7 +117,7 @@ nav {
 }
 
 .productinputs .inputfield input {
-    background-color: #121113;
+    background-color: var(--input-bgcolor);
     width: 100%;
     padding: 10px;
     border-radius: 5px;
@@ -127,7 +127,7 @@ nav {
 .productinputs .inputfield input:focus {
     outline: 0;
     caret-color: white;
-    background-color: #000;
+    background-color: red;
 }
 
 .productinputs .inputfield label {
