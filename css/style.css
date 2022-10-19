@@ -11,7 +11,6 @@ body {
 
 :root {
     --btn-color: #3B0055;
-    --input-bgcolor: #121113;
 }
 
 nav {
@@ -117,7 +116,7 @@ nav {
 }
 
 .productinputs .inputfield input {
-    background-color: #777;
+    background-color: #19191a;
     width: 100%;
     padding: 10px;
     border-radius: 5px;
