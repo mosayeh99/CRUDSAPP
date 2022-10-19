@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Product Management System">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <title>CRUDS</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <section>
+        <nav>
+            <h3 class="texthead">cruds app</h3>
+            <div class="icons">
+                <div class="bell">
+                    <i class="fa-regular fa-bell"></i>
+                </div>
+                <img src="assets/male.png" alt="Use">
+            </div>
+        </nav>
+        <i onclick="scrollup()" class="fa-solid fa-circle-chevron-up scrollbtn"></i>
+        <div class="content">
+            <div class="productinputs">
+                <div class="inputfield">
+                    <label>Title <span>*</span></label>
+                    <input type="text" class="title noempty" name="title" placeholder="Add Product Title">
+                    <div class="alert">
+                        <p>product title is required.</p>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label>Price <span>*</span></label>
+                    <input onkeyup="calcTotal()" type="text" class="price noletter" placeholder="Add Product Price">
+                    <div class="alert">
+                        <p>price accept numbers only.</p>
+                    </div>
+                    <div class="alert">
+                        <p>product price is required.</p>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label>Taxes</label>
+                    <input onkeyup="calcTotal()" type="text" class="taxes noletter" placeholder="Optional">
+                    <div class="alert">
+                        <p>taxes accept numbers only.</p>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label>Ads</label>
+                    <input onkeyup="calcTotal()" type="text" class="ads noletter" placeholder="Optional">
+                    <div class="alert">
+                        <p>ads accept numbers only.</p>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label>Discount</label>
+                    <input onkeyup="calcTotal()" type="text" class="discount noletter" placeholder="Optional">
+                    <div class="alert">
+                        <p>discount accept numbers only.</p>
+                    </div>
+                </div>
+                <div class="finalprice">
+                    <button class="total">Final Price: <span></span></button>
+                    <div class="alert">
+                        <p>negative values not accepted.</p>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label>Number of Products</label>
+                    <input type="text" class="count noletter" placeholder="Let Empty To Add 1 Product">
+                    <div class="alert">
+                        <p>field accept numbers only.</p>
+                    </div>
+                </div>
+                <div class="inputfield">
+                    <label>Category <span>*</span></label>
+                    <input type="text" class="category noempty" placeholder="Add Category Name">
+                    <div class="alert">
+                        <p>category Name is required.</p>
+                    </div>
+                </div>
+                <input type="submit" class="create" value="Create">
+                <div class="inputfield">
+                    <label>Search</label>
+                    <input onkeyup="prodsearch()" type="text" class="search" placeholder="Search By Title">
+                    <i class="fa-solid fa-xmark clearsearch"></i>
+                </div>
+                <input type="submit" class="searchbytitle" value="Search By Title">
+                <input type="submit" class="searchbycat" value="Search By Category">
+                <input type="submit" class="delall" value="Delete All">
+            </div>
+            <div class="allproducts">
+                <table>
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Title</td>
+                            <td>Price</td>
+                            <td>Taxes</td>
+                            <td>Ads</td>
+                            <td>Discount</td>
+                            <td>Total</td>
+                            <td>Category</td>
+                            <td>Update</td>
+                            <td>Delete</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td id="id">1</td>
+                            <td id="title">samsung</td>
+                            <td id="price">2000</td>
+                            <td id="taxes">100</td>
+                            <td id="ads">100</td>
+                            <td id="discount">100</td>
+                            <td id="total">2100</td>
+                            <td id="category">phone</td>
+                            <td id="update"><button>Update</button></td>
+                            <td id="delete"><button>Delete</button></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>

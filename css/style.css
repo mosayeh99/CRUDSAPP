@@ -1,0 +1,299 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    background-color: #252525;
+    font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+    --btn-color: #3B0055;
+    --input-bgcolor: #121113;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    background-color: white;
+    position: fixed;
+    width: 100%;
+    box-shadow: #000 0px 6px 20px 0px;
+    z-index: 1;
+}
+
+.texthead {
+    text-transform: uppercase;
+    color: var(--btn-color);
+    margin-left: 100px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    margin-right: 100px;
+}
+
+.icons img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.icons .bell {
+    position: relative;
+    color: var(--btn-color);
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.icons .bell::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #f44336;
+    right: -8px;
+    top: -3px;
+}
+
+.scrollbtn {
+    font-size: 50px;
+    color: white;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.content {
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 120px;
+}
+
+@media (max-width: 767px) {
+    .texthead {
+        margin-left: 20px;
+    }
+    .icons {
+        margin-right: 20px;
+    }
+    .scrollbtn {
+        font-size: 40px;
+    }
+    .content {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+/* -----------------Start Dashboard------------------ */
+.productinputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: relative;
+}
+
+.productinputs > *:not(.inputfield, .finalprice) {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 25px;
+    color: white;
+}
+
+.productinputs .inputfield {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.productinputs .inputfield input {
+    background-color: var(--input-bgcolor);
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    z-index: -1;
+}
+
+.productinputs .inputfield input:focus {
+    outline: 0;
+    caret-color: white;
+    background-color: #000;
+}
+
+.productinputs .inputfield label {
+    display: block;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.productinputs .inputfield label span {
+    color: red;
+}
+
+.productinputs .alert {
+    background-color: rgb(251, 179, 179);
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    position: relative;
+    display: none;
+}
+
+.productinputs .alert p {
+    text-transform: capitalize;
+}
+
+.productinputs .alert p::before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 8px solid;
+    border-color: transparent transparent rgb(251, 179, 179);
+    top: -16px;
+}
+
+.productinputs > [type="submit"] {
+    background-color: var(--btn-color);
+    border: 0;
+    box-shadow: 1px 1px 10px 0px #0000004a;
+    transition:  background-color 0.3s;
+}
+
+.productinputs > [type="submit"]:hover {
+    background-color: #5f1082;
+}
+
+.productinputs > [type="submit"]{
+    cursor: pointer;
+}
+
+.productinputs div:first-child {
+    flex-basis: calc(70% - 30px);
+}
+
+.productinputs div:nth-of-type(2) {
+    flex-basis: 30%;
+}
+
+.productinputs div:nth-of-type(3),
+.productinputs div:nth-of-type(4),
+.productinputs div:nth-of-type(5) {
+    flex-basis: 25%;
+}
+
+.productinputs .finalprice {
+    flex-basis: calc(25% - 80px);
+}
+
+.productinputs .finalprice .total {
+    border: 0;
+    border-radius: 20px;
+    color: var(--btn-color);
+    font-weight: bold;
+    width: 100%;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+.productinputs div:nth-of-type(7),
+.productinputs div:nth-of-type(8) {
+    flex-basis: calc(50% - 15px);
+}
+
+.productinputs .create,
+.productinputs div:nth-of-type(9),
+.productinputs .delall {
+    flex-basis: 100%;
+}
+
+.productinputs .clearsearch {
+    position: absolute;
+    color: white;
+    right: 15px;
+    top: 50%;
+    font-size: 20px;
+    display: none;
+}
+
+.productinputs .searchbytitle,
+.productinputs .searchbycat {
+    flex-basis: calc(50% - 20px);
+}
+
+@media (max-width: 991px) {
+    .productinputs div:first-child {
+        flex-basis: 100%;
+    }
+    .productinputs div:nth-of-type(2),
+    .productinputs div:nth-of-type(3) {
+        flex-basis: calc(50% - 15px);
+    }
+    .productinputs div:nth-of-type(4),
+    .productinputs div:nth-of-type(5) {
+        flex-basis: calc(50% - 15px);
+    }
+    .productinputs .finalprice {
+        flex-basis: 100%;
+    }
+    .productinputs .finalprice .total {
+        margin-top: 0;
+        margin-bottom: 25px;
+    }
+}
+
+@media (max-width: 550px) {
+    .productinputs > * {
+        flex-basis: 100% !important;
+    }
+}
+
+/* -----------------start Table----------------- */
+.allproducts {
+    overflow-x: auto;
+    margin-bottom: 80px;
+}
+
+table {
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+thead tr td {
+    text-align: center;
+    padding: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+tbody tr td {
+    text-align: center;
+    padding: 10px;
+}
+
+tbody button {
+    border-radius: 10px;
+    color: white;
+    background-color: var(--btn-color);
+    border: 0;
+    padding: 5px 20px;
+    cursor: pointer;
+    box-shadow: 1px 1px 10px 0px #0000004a;
+    transition:  background-color 0.3s;
+}
+
+tbody button:hover {
+    background-color: #5f1082;
+}
