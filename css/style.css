@@ -251,6 +251,9 @@ nav {
         margin-top: 0;
         margin-bottom: 25px;
     }
+    .productinputs .finalprice .alert {
+        top: -25px;
+    }
 }
 
 @media (max-width: 550px) {
